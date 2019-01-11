@@ -110,7 +110,7 @@ class Api
     {
         // TODO 这里需要优化
         // 重试操作
-        for ($i = 0; $i < 5; $i++) {
+        // for ($i = 0; $i < 5; $i++) {
             try {
                 $this->wsClient->connect();
                 if (is_array($message[0] ?? 'e')) {
@@ -122,11 +122,11 @@ class Api
                     $this->wsClient->sendData(gzencode(json_encode($message)), Protocol::TYPE_BINARY);
                 }
                 $response = $this->wsClient->receive()[0]->getPayload();
-                break;
+                // break;
             } catch (\Throwable $e) {
                 $this->wsClient->disconnect();
             }
-        }
+        // }
 
         $this->wsClient->disconnect();
 

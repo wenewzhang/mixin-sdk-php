@@ -25,7 +25,10 @@ class Message extends Api
     {
         $this->packageConfig = require(__DIR__.'/../../config/config.php');
         $this->config        = $config;
-        $this->wsClient      = new Client('wss://blaze.mixin.one/', 'https://google.com');
+        $this->wsClient      = new Client('wss://blaze.mixin.one/',
+                                          'wss://blaze.mixin.one/',
+                                          ['on_data_callback' => this->onData()]
+                                          );
         $this->wsClient->addRequestHeader('Authorization', 'Bearer '.$this->getToken('GET', '/', ''));
         $this->wsClient->addRequestHeader('protocol', 'Mixin-Blaze-1');
     }
@@ -58,6 +61,10 @@ class Message extends Api
         return $this->webSocketRes($message);
     }
 
+    public function onData()
+    {
+        print("onData");
+    }
     // TODO
     //public function sendImage(): array
     //{

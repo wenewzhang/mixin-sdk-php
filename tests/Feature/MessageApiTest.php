@@ -24,9 +24,9 @@ class MessageApiTest extends TestCase
     public function test_it_can_send_message()
     {
         $ids = [
-            '17d1c125-aada-46b0-897d-3cb2a29eb011',
+            '0b4f49dc-8fb4-4539-9a89-fb3afc613747',
         ];
-        $a = $this->mixinSDK->message()->sendBatchMessage($ids,'cccc');
+        $a = $this->mixinSDK->message()->sendBatchMessage($ids,'Hello,Websocket!');
         dd($a);
     }
 }

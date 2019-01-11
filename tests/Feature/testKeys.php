@@ -5,30 +5,28 @@
  * Date: 18-12-24
  * Time: 上午1:19
  */
-
-
 return [
-    'mixin_id'      => '7000101633',
-    'client_id'     => '982afd4e-92dd-4430-98cf-d308442ea04d',
-    'client_secret' => 'abb217525d0904774d788c2f977deaaa9b8b162b5a7da709340f5d0b9251a681',
-    'pin'           => '115346',
-    'pin_token'     => 'cf7aqsi5qwdQ/IstqhNA9wDe/diXhM8TevJ3ArEighaY81/VG5leRdvDrVxuifZInSRp68JX4pSsq9S6G/C+nl8LuctzJQ4yP3MnFWi5/19BEhb3iCE2jmGU79g6k4svWctmHrfKKL3UZPE/y6c2YzlJ4kmwnymy5bukrXA26yI=',
-    'session_id'    => 'ae58d157-6eae-4254-96ee-e5ca67951c2f',
+    'mixin_id'      => '7000101716',
+    'client_id'     => 'a1ce2967-a534-417d-bf12-c86571e4eefa',
+    'client_secret' => '7339866727d24eeec1c4ebb6c634fd25a7b9057ee6d5939cca9b6b9fc15f4d1f',
+    'pin'           => '512772',
+    'pin_token'     => 'abRdNq6soRALRG434IgR7WS/qP7LOcpfviqSfWfABdIKyZGLnWXFMrVCHpChIkBRGRAcsUguni0OoNsShddPVL3qoD5fxbF5dRUiRv14urH1Pmdl6zIZdCH159QMr5wLmmSHSGu2AihNkUHUo3bAJsrvOW0nke5y6R5YE/pNNfo=',
+    'session_id'    => '51faabbf-48ff-4df2-898d-e9b318afae35',
     'private_key'   => <<<EOF
 -----BEGIN RSA PRIVATE KEY-----
-MIICXgIBAAKBgQCwjIkMmsA0R5CQHfa5dBuMQ3mYr2moyVhJz5dZtGcvt9oxFpCu
-MUcQid+9Pae87HiKUyqYr6V1RB/k2BEssR8qlfMSAO2KQrRR02X4XXerxmuX88NG
-j2wM7mKLtKR7p5nolfhsRS+/XeF6hqd9PdJnqOmKWU5LHdGlkK/vO/UswQIDAQAB
-AoGBAI0pgTdL0Ny8T/F7k9fK52/qT6JutwvXGbnCu2BlZ4/28AYJ5drx2cF2jCfy
-0Vi0ttjbEJcO8jvmIZ5HyMu0P5boHTm9EhQqrVhklo+WL49wSDg2A0u6nqhWHr6G
-X3xsK55jTOpdBV7V2O5MN6mAuGg78ir8MPLPruFz/cjLxLSFAkEA3RNkdQ4fcl7o
-DPKt1FKJhtwoUESwztgbaGLG7SBsepBxtO3ZYsyxdCnz8XeSXWN8jL+DY2TVZrs2
-L0ztqC9hNwJBAMxwayC8mkqVXh5zi1oCjUYI/gXICwva7bbCiWlPggxPOGZpTGmm
-f39c4ZjbNzqRxCWvERsXFuftsy5ABJf9vccCQQDE14x90TpcynZReQ8f2vHLG2Hl
-vpOzSKZ2tmSrJFCSfORRleoWV221odkr6ixvbLKsW6VwLYr5cr3XNebx9mXXAkBK
-NizNL2ma1WnbB/p37CE4YR9FHf7UiN5tz2RuNAxzR3ajxmmUmHoD08WY5UrBGhTn
-0QsWmGUaP/EhQt/oBJYVAkEAxZd9vfOjtJwBkczDOqcLrXg7RD712c4tjwfRmNRn
-8DD2OHRBa/+JHM7zGGdJw2BkKTh00IDi7WB9pfZlI+lrcA==
+MIICXQIBAAKBgQCuKI65sJR9lQ1+kyKouWu3CpmkPdJKaFqKVMEWk9RRH1Wgju9n
+z/y5MiBVZKUeeIYtwrCNKbbdkSPqMoj1kLh5XUk4HaV9DUt+s9USBHOgU8m5Pxov
+Km+HQ+Pam62lHWn6ClYaNrDihpcdDg9i7Y8hY1cgKiUcdkFQmDQ9lz2VHwIDAQAB
+AoGANHJSSOk8TnVMkwmMLnNoVL8EdcmIQpAac/4CB+KM1cEx8CAbSJAB82N9CTo9
+32c8QRuYP2qIf0DuJ+EADbN/Wc3o9zRY3dkbnLo144g3YaKwDccSgUMux03ANHlP
+MEPDxOUbxJTRPXmKgUZmGJrkAClGbr3pPyQDDHDWRQc9JUECQQDT7pUYcXtu+hSc
+nAlZllzqkBG2gZrDYpPJ0JirpfNhaApBo+CGZYKQ1961o6+HcI9gZmZA8hPEhT6p
+PlubjqxbAkEA0l89du8TIUGrY9/sxyfZif6aeEztXPwBHZ9r8dm0L8Mlu5zTrOX2
+SUgu3znM6djmuRMS45iPHJbPkvw9ilaljQJBAJRN323Ec/D79ZKGKpDThN/rw0lo
+tolFoU/Xtg5fycl/CbZXXFYQEOcU+Nc43Ss1HFAEOEf4Xtbluyyp42ce1wMCQElv
+P4htyhK41rglaYTXr0NRYeCOkej8evM5PDgPU6u8hkZoZyeamo9YKCx6A8K5mUiP
+lO9nyMUlC852SJEqz90CQQDBguGg5GGcfehpIZwERlMJgKGg1+13/9GfnEPdAW2v
+px7DZoMG/pQ/SEa53tJHmGGD9+qyp93z/fEPXsD5RSwx
 -----END RSA PRIVATE KEY-----
 EOF
     ,  //import your private_key

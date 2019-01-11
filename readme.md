@@ -13,6 +13,50 @@
 
 Mixin-Network SDK for PHP, modify from [ExinOne/laravel-mixin-sdk](https://github.com/ExinOne/laravel-mixin-sdk)
 
+## TODO for asynchronous communication
+
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+//install composer to /usr/local/opt/php@7.2/bin and give a brief name 'composer'
+php composer-setup.php --install-dir=/usr/local/opt/php@7.2/bin --filename=composer
+php -r "unlink('composer-setup.php');"
+
+```
+test:
+cd tests/Feature
+../../vendor/bin/phpunit MessageApiTest.php
+
+> Wrench/ClientTest.php
+```php
+$this->assertInstanceOfClass(
+    $client = new Client(
+        'ws://localhost/test',
+        'http://example.org/',
+        ['socket' => $this->getMockSocket()]
+    ),
+    'ws:// scheme, socket specified'
+);
+```
+> Wrench/Client.php
+```php
+
+/**
+ * Payload receiver
+ * Public because called from our PayloadHandler. Don't call us, we'll call
+ * you (via the on_data_callback option).
+ *
+ * @param Payload $payload
+ */
+public function onData(Payload $payload)
+{
+    $this->received[] = $payload;
+    if (($callback = $this->options['on_data_callback'])) {
+        call_user_func($callback, $payload);
+    }
+}
+```
+
 ## Requirement
 
 1. `Composer`
