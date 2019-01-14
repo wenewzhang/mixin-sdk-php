@@ -15,10 +15,13 @@ Mixin-Network SDK for PHP, modify from [ExinOne/laravel-mixin-sdk](https://githu
 ## 异步通讯设计思路：
 异步通迅与同步通迅的区别正如它的名字，等待服务器任意时长来响应，这与http协议的request/response是不一样的，
 http的连接过程: request/response在tcp层，具体可以分成:connect->get /(request) -> response -> disconnect,
-可见，connect/disconnect对上层来讲，是隐藏起来了，
+可见，connect/disconnect对上层来讲，是隐藏起来了
+
 websocket的实现如Wrench，将它独立出来了，我们只需要将这一层的connect/disconnect都放开放给app开发者，让上一层的设计者来控制，
 这样就能实现如下的情况：
+
 connect->auth->"ACKNOWLEDGE_MESSAGE_RECEIPT"/"CREATE_MESSAGE"/"LIST_PENDING_MESSAGES" -> disconnect
+
 解释如下：
 连接-> token认证 -> 消息状态/新消息/未读消息/...->断开,
 言下之意，可以在一次连接上接受/发送无限制的消息.
