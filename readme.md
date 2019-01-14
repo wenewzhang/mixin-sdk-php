@@ -27,6 +27,7 @@ connect->auth->"ACKNOWLEDGE_MESSAGE_RECEIPT"/"CREATE_MESSAGE"/"LIST_PENDING_MESS
 - **SendRaw** 发送任意消息(如SendText/SendImage/SendVedio ...)
 - **onMessage** 响应服务器发过来的消息 由App来处理收到的消息,即一个CallBack函数,php由call_user_func来调用任意名字的function.
 - **Disconnect** 断开连接
+
 在机器人的设计中，连接并认证后，发送一个LIST_PENDING_MESSAGES,机器人就能接收到用户发过来的任意消息。
 具体到min-sdk-php的设计中，只需要将 webSocketRes 分成以上4个部分就行了，为了不显示到原来的设计，比较好的是
 重新提供以上4个function并public给app开发者即可。
