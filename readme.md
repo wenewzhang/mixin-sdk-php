@@ -12,6 +12,26 @@
 [![](https://img.shields.io/badge/language-中文文档-333333.svg?longCache=true&style=flat-square&colorA=E62B1E)](readme-cn.md)
 
 Mixin-Network SDK for PHP, modify from [ExinOne/laravel-mixin-sdk](https://github.com/ExinOne/laravel-mixin-sdk)
+## 异步通讯设计思路：
+异步通迅与同步通迅的区别正如它的名字，等待服务器任意时长来响应，这与http协议的request/response是不一样的，
+http的连接过程: request/response在tcp层，具体可以分成:connect->get /(request) -> response -> disconnect,
+可见，connect/disconnect对上层来讲，是隐藏起来了，
+websocket的实现如Wrench，将它独立出来了，我们只需要将这一层的connect/disconnect都放开放给app开发者，让上一层的设计者来控制，
+这样就能实现如下的情况：
+connect->auth->"ACKNOWLEDGE_MESSAGE_RECEIPT"/"CREATE_MESSAGE"/"LIST_PENDING_MESSAGES" -> disconnect
+解释如下：
+连接-> token认证 -> 消息状态/新消息/未读消息/...->断开,
+言下之意，可以在一次连接上接受/发送无限制的消息.
+
+**ConnectAndSignByToken** 连接服务器并认证
+**SendRaw** 发送任意消息(如SendText/SendImage/SendVedio ...)
+**onMessage** 响应服务器发过来的消息 由App来处理收到的消息,即一个CallBack函数,php由call_user_func来调用任意名字的function.
+**Disconnect** 断开连接
+在机器人的设计中，连接并认证后，发送一个LIST_PENDING_MESSAGES,机器人就能接收到用户发过来的任意消息。
+具体到min-sdk-php的设计中，只需要将 webSocketRes 分成以上4个部分就行了，为了不显示到原来的设计，比较好的是
+重新提供以上4个function并public给app开发者即可。
+
+
 
 ## TODO for asynchronous communication
 
