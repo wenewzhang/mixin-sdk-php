@@ -1,6 +1,8 @@
 # call_user_func测试:
+```bash
 cd tests/Feature
 ../../vendor/bin/phpunit MessageApiTest.php
+```
 
 # Mixin-SDK-PHP
 
