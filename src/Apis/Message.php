@@ -27,10 +27,11 @@ class Message extends Api
         $this->config        = $config;
         $this->wsClient      = new Client('wss://blaze.mixin.one/',
                                           'wss://blaze.mixin.one/',
-                                          ['on_data_callback' => this->onData()]
+                                          ['on_data_callback' => array('Message','onData')]
                                           );
         $this->wsClient->addRequestHeader('Authorization', 'Bearer '.$this->getToken('GET', '/', ''));
         $this->wsClient->addRequestHeader('protocol', 'Mixin-Blaze-1');
+        $this->wsClient->connect();
     }
 
     /**
@@ -61,10 +62,6 @@ class Message extends Api
         return $this->webSocketRes($message);
     }
 
-    public function onData()
-    {
-        print("onData");
-    }
     // TODO
     //public function sendImage(): array
     //{
@@ -233,5 +230,8 @@ class Message extends Api
         }
 
         return $this->webSocketRes($messages);
+    }
+    static function onData($Arg) {
+      print($Arg);
     }
 }

@@ -112,7 +112,7 @@ class Api
         // 重试操作
         // for ($i = 0; $i < 5; $i++) {
             try {
-                $this->wsClient->connect();
+                // $this->wsClient->connect();
                 if (is_array($message[0] ?? 'e')) {
                     $messages = $message;
                     foreach ($messages as $v) {
@@ -128,10 +128,10 @@ class Api
             }
         // }
 
-        $this->wsClient->disconnect();
+        // $this->wsClient->disconnect();
 
         return [
-            'content'       => json_decode(gzdecode($response), true),
+            'content'       => [],
             'customize_res' => [],
         ];
     }
@@ -221,4 +221,7 @@ class Api
             'timeout'  => $this->timeout,
         ]);
     }
+    // public function onData($Arg) {
+    //   print($Arg);
+    // }
 }
