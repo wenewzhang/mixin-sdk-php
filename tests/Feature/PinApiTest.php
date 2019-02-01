@@ -30,13 +30,13 @@ class PinApiTest extends TestCase
         //$res = $this->mixinSDK->pin()->verifyPin($nowPin);
         //dump($res);
         //dump($nowPin, $newPin);
-        $res = $this->mixinSDK->pin()->updatePin($nowPin, $newPin);
+        // $res = $this->mixinSDK->pin()->updatePin($nowPin, $newPin);
         //dd($res);
+        // dump($res);
+        $res = $this->mixinSDK->pin()->verifyPin($nowPin);
         dump($res);
-        $res = $this->mixinSDK->pin()->verifyPin($newPin);
-        dump($res);
-        $res = $this->mixinSDK->pin()->updatePin($newPin, $nowPin);
-        dump($res);
+        // $res = $this->mixinSDK->pin()->updatePin($newPin, $nowPin);
+        // dump($res);
 
         self::assertFalse(false);
     }

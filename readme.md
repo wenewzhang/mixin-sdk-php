@@ -2,6 +2,9 @@
 ```bash
 cd tests/Feature
 ../../vendor/bin/phpunit MessageApiTest.php
+vi src/Pin.php
+'pin' => "U0dd4aBpIAIniF5QjmZwHXE1UABr1WZK9U7EpCPL4J+cNPqi3DryHA1BE60/vzlp",
+
 ```
 
 # Mixin-SDK-PHP
